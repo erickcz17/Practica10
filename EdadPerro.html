@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Calculadora de Edad</title>
+
+    <script>
+
+        function calcularEdad() {
+
+            var fechaNacimiento = document.getElementById("fechaNacimiento").value;
+
+            var fechaActual = new Date();
+
+            var fechaNac = new Date(fechaNacimiento);
+
+            var edad = fechaActual.getFullYear() - fechaNac.getFullYear();
+
+           
+
+            // Cálculo de la edad en años de perro
+
+            var edadPerro = edad * 7;
+
+           
+
+            // Mostrar la edad en años normales y años de perro
+
+            document.getElementById("resultado").innerHTML = "Tu edad es " + edad + " años.<br>";
+
+            document.getElementById("resultado").innerHTML += "Tu edad en años de perro es " + edadPerro + " años.<br>";
+
+           
+
+            // Mostrar mensaje según la edad en años de perro
+
+            if (edadPerro > 60) {
+
+                document.getElementById("resultado").innerHTML += "Eres un perro viejo.";
+
+            } else if (edadPerro > 27 && edadPerro <= 59) {
+
+                document.getElementById("resultado").innerHTML += "Eres un perro adulto.";
+
+            } else if (edadPerro > 1 && edadPerro <= 26) {
+
+                document.getElementById("resultado").innerHTML += "Eres un perro cachorro.";
+
+            }
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <h1>Calculadora de Edad</h1>
+
+    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+
+    <input type="date" id="fechaNacimiento">
+
+    <button onclick="calcularEdad()">Calcular</button>
+
+    <div id="resultado"></div>
+
+</body>
+
+</html>
